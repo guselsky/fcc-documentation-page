@@ -20,7 +20,42 @@
 </head>
 
 <body>
-	<h1>Basic Concepts of Flexbox</h1>	
+	<nav id="navbar">
+		<header>
+			<h1>Basic Concepts of Flexbox</h1>	
+		</header>
+		<a href="#Text_That_Describes_The_Sections_Topic" class="nav-link">The two axes of flexbox</a>
+	</nav>
+	<main id="main-doc">
+		<section class="main-section" id="Text_That_Describes_The_Sections_Topic">
+			<header>
+				The two axes of flexbox
+			</header>
+			<article>
+				<h2>The main axis</h2>
+				<p>The main axis is defined by <code>flex-direction</code>, which has four possible values:</p>
+				<ul>
+					<li><code>row</code></li>
+					<li><code>row-reverse</code></li>
+					<li><code>column</code></li>
+					<li><code>column-reverse</code></li>
+				</ul>
+				<p>Should you choose <code>row</code> or <code>row-reverse</code>, your main axis will run along the row in the <strong>inline-direction</strong></p>
+				<img src="assets/images/Basics1.png" alt="Main Axis - flex-direction:row">
+				<p>Choose <code>column</code> or <code>column-reverse</code> and your main axis will run from the top of the page to the bottom - in the <strong>block direction</strong></p>
+				<img src="assets/images/Basics2.png" alt="Main Axis - flex-direction:column">
+				<h2>The cross axis</h2>
+				<p>The cross axis runs perpendicular to the main axis, therefore if your <code>flex-direction</code> (main axis) is set to <code>row</code> or <code>row-reverse</code> the cross axis runs down the columns.</p>
+				<img src="assets/images/Basics3.png" alt="Cross Axis - flex-direction: row">
+				<p>If your main axis is <code>column</code> or <code>column-reverse</code> then the cross axis runs along the rows.</p>
+				<img src="assets/images/Basics4.png" alt="Cross Axis - flex-direction: column">
+			</article>
+		</section>
+		<section class="main-section">
+			
+		</section>
+	</main>
+	
 </body>
 
 </html>
