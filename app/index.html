@@ -49,10 +49,39 @@
 				<img src="assets/images/Basics3.png" alt="Cross Axis - flex-direction: row">
 				<p>If your main axis is <code>column</code> or <code>column-reverse</code> then the cross axis runs along the rows.</p>
 				<img src="assets/images/Basics4.png" alt="Cross Axis - flex-direction: column">
+				<p>Understanding which axis is which is important when we start to look at aligning and justifying flex items; flexbox features properties that align and justify content along one axis or the other.</p>
 			</article>
 		</section>
 		<section class="main-section">
-			
+			<header>Start and end lines</header>
+			<p>Another vital area of understanding is how flexbox makes no assumption about the writing mode of the document. In the past, CSS was heavily weighted towards horizontal and left-to-right writing modes. Modern layout methods encompass the range of writing modes and so we no longer assume that a line of text will start at the top left of a document and run towards the right hand side, with new lines appearing one under the other.</p>
+			<p>You can read more about the relationship between flexbox and the Writing Modes specification in a later article, however the following description should help explain why we do not talk about left and right and top and bottom when we describe the direction that our flex items flow in.</p>
+			<p>If the <code>flex-direction</code> is <code>row</code> and I am working in English, then the start edge of the main axis will be on the left, the end edge on the right.</p>
+			<img src="assets/images/Basics5.png" alt="Cross Axis - flex-direction: column">
+			<p>If I were to work in Arabic, then the start edge of my main axis would be on the right and the end edge on the left.</p>
+			<img src="assets/images/Basics6.png" alt="main Axis - flex-direction: row">
+			<p>In both cases the start edge of the cross axis is at the top of the flex container and the end edge at the bottom, as both languages have a horizontal writing mode.</p>
+			<p>After a while, thinking about start and end rather than left and right becomes natural, and will be useful to you when dealing with other layout methods such as CSS Grid Layout which follow the same patterns.</p>
+		</section>
+		<section>
+			<header>The flex container</header>
+			<p>An area of a document laid out using flexbox is called a flex container. To create a <strong>flex container</strong>, we set the value of the area's container's <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline, including SVG elements."><code>display</code></a> property to <code>flex</code> or <code>inline-flex</code>. As soon as we do this the direct children of that container become <strong>flex items</strong>. As with all properties in CSS, some initial values are defined, so when creating a flex container all of the contained flex items will behave in the following way.</p>
+			<ul>
+				<li>Items display in a row (the <code>flex-direction</code> property's default is <code>row</code>).</li>
+				<li>The items start from the start edge of the main axis.</li>
+				<li>The items do not stretch on the main dimension, but can shrink.</li>
+				<li>The items will stretch to fill the size of the cross axis.</li>
+				<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis" title="The flex-basis CSS property specifies the initial main size of a flex item. This property determines the size of the content-box unless specified otherwise using box-sizing."><code>flex-basis</code></a> property is set to <code>auto</code>.</li>
+				<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap" title="The CSS flex-wrap property specifies whether flex items are forced into a single line or can be wrapped onto multiple lines. If wrapping is allowed, this property also enables you to control the direction in which lines are stacked."><code>flex-wrap</code></a> property is set to <code>nowrap</code>.</li>
+			</ul>
+			<p>The result of this is that your items will all line up in a row, using the size of the content as their size in the main axis. If there are more items than can fit in the container, they will not wrap but will instead overflow. If some items are taller than others, all items will stretch along the cross axis to fill its full size.</p>
+			<p>You can see in the live example below how this looks. Try editing the items or adding additional items in order to test the initial behavior of flexbox.</p>
+			<iframe src="https://mdn.github.io/css-examples/flexbox/basics/the-flex-container.html" class="live-sample-frame" width="100%" frameborder="0" height="480"></iframe>
+			<h2>Changing flex-direction</h2>
+			<p>Adding the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" title="The flex-direction CSS property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed)."><code>flex-direction</code></a> property to the flex container allows us to change the direction in which our flex items display. Setting <code>flex-direction: row-reverse</code> will keep the items displaying along the row, however the start and end lines are switched.</p>
+			<p>If we change <code>flex-direction</code> to <column>column</column> the main axis switches and our items now display in a column. Set <code>column-reverse</code> and the start and end lines are again switched.</p>
+			<p>The live example below has <code>flex-direction</code> set to <code>row-reverse</code>. Try the other values — <code>row</code>, <code>column</code> and <code>column-reverse</code> — to see what happens to the content.</p>
+			<iframe src="https://mdn.github.io/css-examples/flexbox/basics/flex-direction.html" class="live-sample-frame" width="100%" frameborder="0" height="350"></iframe>
 		</section>
 	</main>
 	
