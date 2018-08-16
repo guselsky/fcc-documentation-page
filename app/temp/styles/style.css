@@ -408,3 +408,9 @@ body {
 img {
   max-width: 100%;
   height: auto; }
+
+ul {
+  padding-left: 40px; }
+
+code {
+  background-color: rgba(220, 220, 220, 0.5); }
